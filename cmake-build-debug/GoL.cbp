@@ -99,36 +99,6 @@
 		<Unit filename="/tmp/tmp.rLsFZHIY8P/main.cpp">
 			<Option target="GoL"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/array/array.h">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/ds_routines.cpp">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/ds_routines.h">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/ds_structure_types.h">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/matrix/ArrayMatrix.h">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/matrix/matrix.h">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/structure.cpp">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/structure.h">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/vector/vector.cpp">
-			<Option target="GoL"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/structures/vector/vector.h">
-			<Option target="GoL"/>
-		</Unit>
 		<Unit filename="/tmp/tmp.rLsFZHIY8P/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
-#include "structures/ArrayMatrix.h"
+#include <vector>
 
 using namespace std;
 
@@ -16,8 +16,8 @@ private:
     int rows;
     int cols;
 
-    structures::ArrayMatrix<bool>* grid;
-    structures::ArrayMatrix<bool>* secondaryGrid;
+    vector<vector<bool>> * grid;
+    vector<vector<bool>> * secondaryGrid;
 
 public:
     Game(int rows, int cols);
