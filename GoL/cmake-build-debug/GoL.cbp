@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/tmp/tmp.rLsFZHIY8P/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.gorlLBGGVq/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/tmp/tmp.rLsFZHIY8P/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.gorlLBGGVq/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/tmp/tmp.rLsFZHIY8P/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.gorlLBGGVq/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GoL">
-				<Option output="/tmp/tmp.rLsFZHIY8P/cmake-build-debug/GoL" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.rLsFZHIY8P/cmake-build-debug"/>
+				<Option output="/tmp/tmp.gorlLBGGVq/cmake-build-debug/GoL" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.gorlLBGGVq/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoL"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoL"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GoL/fast">
-				<Option output="/tmp/tmp.rLsFZHIY8P/cmake-build-debug/GoL" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.rLsFZHIY8P/cmake-build-debug"/>
+				<Option output="/tmp/tmp.gorlLBGGVq/cmake-build-debug/GoL" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.gorlLBGGVq/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,29 +77,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoL/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.rLsFZHIY8P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoL/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.gorlLBGGVq/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/Game.cpp">
+		<Unit filename="/tmp/tmp.gorlLBGGVq/Game.cpp">
 			<Option target="GoL"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/Game.h">
+		<Unit filename="/tmp/tmp.gorlLBGGVq/Game.h">
 			<Option target="GoL"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/Menu.cpp">
+		<Unit filename="/tmp/tmp.gorlLBGGVq/Menu.cpp">
 			<Option target="GoL"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/Menu.h">
+		<Unit filename="/tmp/tmp.gorlLBGGVq/Menu.h">
 			<Option target="GoL"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/main.cpp">
+		<Unit filename="/tmp/tmp.gorlLBGGVq/main.cpp">
 			<Option target="GoL"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.rLsFZHIY8P/CMakeLists.txt">
+		<Unit filename="/tmp/tmp.gorlLBGGVq/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

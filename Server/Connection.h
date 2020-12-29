@@ -57,6 +57,6 @@ public:
        return 5;
    }
 
-   close(newsockfd); // zavri client socket
+   close(newsockfd); // zavri Client socket
    close(sockfd);// zavri server socket
    */

@@ -28,23 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50afdc66-c906-4959-acd5-05bdf4932365" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/.idea/Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GoL.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GoL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GoL.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoL/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GoL/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoL/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GoL/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoL/cmake-build-debug/GoL.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/GoL/cmake-build-debug/GoL.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Connection.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +43,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1mKuJTidvUchhoNyC3Dl8qLA2OE" />
@@ -69,9 +62,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -84,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609254531515</updated>
       <workItem from="1609254532889" duration="251000" />
+      <workItem from="1609256367224" duration="345000" />
     </task>
     <servers />
   </component>
@@ -100,5 +94,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
