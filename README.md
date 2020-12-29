@@ -1,17 +1,26 @@
 # POS-semestralka
 
-//TODO dopredna a spatna simulacia
+Prorities:
 
-//TODO ovladanie pocas behu appky, stopnutie simulacie, rewind, ulozenie, etc.
+Server:
 
-//TODO nacitanie zo suboru
+1. Rozbehnut jednoduchu komunikaciu
+2. Rozvrhnut a pridat vlakna
+3. Zosynchronizovat
+4. Implementovanie hry
 
-//TODO zobrazovanie vzorov ulozenych na serveri
+Client:
 
-//TODO server cast semestralky
+ - ditto
 
-//TODO klient cast semestralky
 
-//TODO dunno, ale urcite je toho este dost
+Hra:
 
-//TODO FIX ERRORS FFS
+1. Dopredna a spatna simulacia
+2. Ovladanie pocas behu appky, stopnutie simulacie, rewind, ulozenie, etc.
+3. Nacitanie zo suboru
+4. Zobrazovanie vzorov ulozenych na serveri
+
+
+
+

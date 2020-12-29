@@ -85,7 +85,7 @@ void Game::simulate(int fps) {
         printGrid();
         calculateState();
         synchronizeGrids();
-        usleep((1000 / fps) * 1000 );
+        sleep(1 / fps);
         clearScreen();
     }
 }

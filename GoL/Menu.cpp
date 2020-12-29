@@ -102,7 +102,7 @@ void Menu::start() {
     cin >> confirm;
 
     if (confirm == "y" || confirm == "Y") {
-        game->simulate(60); //TODO let user define it
+        game->simulate(1); //TODO let user define it
     } else {
         game->clearScreen();
         return;
