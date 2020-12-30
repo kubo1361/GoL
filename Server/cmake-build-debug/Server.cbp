@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/tmp/tmp.zCPu6BamAU/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.cXVCPqb8k6/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/tmp/tmp.zCPu6BamAU/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.cXVCPqb8k6/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/tmp/tmp.zCPu6BamAU/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.cXVCPqb8k6/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server">
-				<Option output="/tmp/tmp.zCPu6BamAU/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.zCPu6BamAU/cmake-build-debug"/>
+				<Option output="/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.cXVCPqb8k6/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server/fast">
-				<Option output="/tmp/tmp.zCPu6BamAU/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.zCPu6BamAU/cmake-build-debug"/>
+				<Option output="/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.cXVCPqb8k6/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,29 +77,44 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.zCPu6BamAU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/tmp/tmp.cXVCPqb8k6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/tmp/tmp.zCPu6BamAU/Clients.cpp">
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/Clients.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.zCPu6BamAU/Clients.h">
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/Clients.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.zCPu6BamAU/Connection.cpp">
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/Connection.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.zCPu6BamAU/Connection.h">
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/Connection.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.zCPu6BamAU/main.cpp">
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/Game.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.zCPu6BamAU/CMakeLists.txt">
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/Game.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/connectionHandlerThread.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/main.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/processingThread.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/readClientInputThread.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.cXVCPqb8k6/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
