@@ -4,11 +4,87 @@
 
 #include "Connection.h"
 
-Connection::Connection() {
+Connection::Connection(int arg) {
+    this->id = arg;
     this->clientAddressLength = sizeof(clientAddress);
     bzero(&this->clientAddress, this->clientAddressLength);
+
+    this->actionBuffer = new queue<string>();
+
+    pthread_mutex_init(&(this->connectionMediatorMut), NULL);
+    pthread_cond_init(&(this->readCond), NULL);
+    pthread_cond_init(&(this->executeCond), NULL);
+
+    this->terminatedConnection = false;
+
+    this->game = new Game(DEFAULT_DIM);
 }
 
 Connection::~Connection() {
+    delete actionBuffer;
+
+    pthread_mutex_destroy(&(this->connectionMediatorMut));
+    pthread_cond_destroy(&(this->readCond));
+    pthread_cond_destroy(&(this->executeCond));
+    close(this->socket);
+
+    delete game;
+}
+
+int Connection::getSocket() {
+    return this->socket;
+}
+
+void Connection::setSocket(int arg) {
+    this->socket = arg;
+}
+
+sockaddr_in & Connection::getClientAddress() {
+    return this->clientAddress;
+}
+
+socklen_t & Connection::getClientAddressLength() {
+    return this->clientAddressLength;
+}
+
+pthread_mutex_t& Connection::getConnectionMediatorMut() {
+    return this->connectionMediatorMut;
+}
+
+pthread_cond_t &Connection::getReadCond() {
+    return this->readCond;
+}
+
+pthread_cond_t &Connection::getExecuteCond() {
+    return this->executeCond;
+}
+
+bool Connection::isTerminatedConnection() {
+    return this->terminatedConnection;
+}
+
+void Connection::setTerminateConnection(bool arg) {
+    this->terminatedConnection = arg;
+}
+
+string Connection::getAction() {
+    if(actionBuffer->empty()) {
+        return "empty";
+    } else {
+        return actionBuffer->front();
+    }
 
 }
+
+void Connection::addAction(string arg) {
+    this->actionBuffer->push(arg);
+}
+
+int Connection::getNumberOfQueuedActions() {
+    return this->actionBuffer->size();
+}
+
+int Connection::getId() {
+    return this->id;
+}
+#undef DEFAULT_DIM

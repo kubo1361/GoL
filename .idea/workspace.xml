@@ -28,11 +28,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50afdc66-c906-4959-acd5-05bdf4932365" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Server/Game.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoL/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GoL/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoL/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GoL/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoL/cmake-build-debug/GoL.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/GoL/cmake-build-debug/GoL.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Clients.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Clients.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Clients.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Clients.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Connection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Connection.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Connection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/cmake-build-debug/Server" beforeDir="false" afterPath="$PROJECT_DIR$/Server/cmake-build-debug/Server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/cmake-build-debug/Server.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/Server/cmake-build-debug/Server.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/connectionHandlerThread.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server/connectionHandlerThread.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/processingThread.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server/processingThread.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/readClientInputThread.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server/readClientInputThread.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +71,6 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,7 +81,18 @@
       <updated>1609254531515</updated>
       <workItem from="1609254532889" duration="251000" />
       <workItem from="1609256367224" duration="345000" />
+      <workItem from="1609346373815" duration="146000" />
+      <workItem from="1609422541353" duration="83000" />
+      <workItem from="1609592057792" duration="70000" />
     </task>
+    <task id="LOCAL-00001" summary="server side threads added (60%)">
+      <created>1609346494094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609346494094</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,5 +109,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="server side threads added (60%)" />
+    <option name="LAST_COMMIT_MESSAGE" value="server side threads added (60%)" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1609346505677">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609346505677" />
+    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609320365883">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609320365883" />
+    <state x="740" y="237" key="git4idea.branch.GitSmartOperationDialog" timestamp="1609320404875">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="237" key="git4idea.branch.GitSmartOperationDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609320404875" />
   </component>
 </project>
