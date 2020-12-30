@@ -6,11 +6,11 @@
 #define SERVER_CLIENTS_H
 
 #include "Connection.h"
-#include <unordered_map>
+#include <vector>
 
 class Clients {
 private:
-    unordered_map<int, Connection*> connections;
+    vector<Connection*> connections;
 public:
     Clients();
     ~Clients();
