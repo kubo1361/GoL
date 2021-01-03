@@ -86,18 +86,20 @@ void Game::synchronizeGrids() {
  * Return living cells
  */
 string Game::getState() {
-    string livingCells = "";
+    string size = to_string(this->rows) + ";" + to_string(this->cols);
+    string livingCells = size + ";";
     string position = "";
 
     for (int x = 0; x < this->rows; x++) {
         for (int y = 0; y < this->cols; y++) {
             if (grid->at(x).at(y) == true) {
-                position = x + " " + y;
+                position = to_string(x) + "." + to_string(y);
                 livingCells += position + ",";
             }
         }
     }
-    return livingCells;
+    cout << "complete cells: " << livingCells << endl;
+    return livingCells; // x_size;y_size;5 2,6 8,4 6, ....
 }
 
 
@@ -108,11 +110,48 @@ void Game::fillPosition(int x, int y) {
     grid->at(x).at(y) = true;
 }
 
+/*
+ * FIll positions according to arg
+ */
+void Game::fillPositions(string argFileCells) {
+    vector<string> temp;
+    stringstream  splitAction(argFileCells);
+    string line;
+    while(getline(splitAction,line,';'))
+    {
+        temp.push_back(line);
+    }
+    this->fillPositions(stoi(temp[0]),stoi(temp[1]),temp[2]);
+}
+
+/*
+ * FIll positions according to arg
+ */
+void Game::fillPositions(int rows, int cols, string argCells) {
+    this->reshape(rows, cols);
+    string raw = argCells;
+    stringstream  splitCells(raw);
+    string line1;
+    int coords[2];
+    while(getline(splitCells,line1,','))
+    {
+        stringstream  splitCoordinates(line1);
+        string line2;
+        for (int i = 0; i < 2; ++i) {
+            cout << line2 << endl;
+            getline(splitCoordinates,line2,'.');
+            coords[i] = stoi(line2);
+        }
+        cout << "final: " << to_string(coords[0]) << " " << to_string(coords[1]) << endl;
+        this->fillPosition(coords[0], coords[1]);
+    }
+}
 
 /*
  * Fills random "x" and "y" positions with cells;
  */
-void Game::fillRandomPositions(int cellCount) {
+void Game::fillRandomPositions(int rows, int cols, int cellCount) {
+    this->reshape(rows, cols);
     int x;
     int y;
     while (cellCount > 0) {
@@ -151,7 +190,11 @@ void Game::restart() {
 /*
  * One step of a game.
  */
-string Game::step() {
+string Game::forwardStep() {
     this->calculateState();
     return this->getState();
 }
+
+
+
+

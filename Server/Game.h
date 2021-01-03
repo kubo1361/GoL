@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -25,7 +26,9 @@ public:
     ~Game();
 
     void fillPosition(int x, int y);
-    void fillRandomPositions(int cellCount);
+    void fillPositions(string argFileCells);
+    void fillPositions(int rows, int cols, string argCells);
+    void fillRandomPositions(int rows, int cols, int cellCount);
 
     void synchronizeGrids();
     void calculateState();
@@ -36,10 +39,8 @@ public:
 
     string getState();
 
-    string step();
-
-    //TODO bool loadFromFile(string file);
-    //TODO bool saveToFile(string file);
+    string forwardStep();
+    //TODO string backwardStep();
 };
 
 

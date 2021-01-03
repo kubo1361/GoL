@@ -7,6 +7,7 @@
 #include <unistd.h>
 
 #include "connectionHandlerThread.h"
+#include "ServerStorage.h"
 
 
 
@@ -40,13 +41,15 @@ int main(int argc, char *argv[]) {
     cout << "Listening for communication requests" << endl;
     listen(serverSocket, HOST_COUNT);
 
-    Clients * clients = new Clients();
+    Clients * clients = new Clients(); //redundant
+    ServerStorage * storage = new ServerStorage();
     pthread_t chThread;
     pthread_mutex_t chtMut = PTHREAD_MUTEX_INITIALIZER;
 
     chtData data;
     data.serverSocket = &serverSocket;
     data.clients = clients;
+    data.storage = storage;
     data.chtMut = &chtMut;
 
     pthread_create(&chThread, NULL, &chtFun, (void *)&data);
@@ -71,6 +74,9 @@ int main(int argc, char *argv[]) {
         }
     }
 }
-
+//FIXME su tu problemy ked je viac ludi naraz pripojenych
+//FIXME server storage - nenacitava patterny
+//FIXME server storage - neuklada storage po vypnuti serveru
+//TODO nainstaluj WSL a fixni memory leaky
 #undef PORT
 #undef HOST_COUNT

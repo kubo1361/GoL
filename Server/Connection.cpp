@@ -18,6 +18,7 @@ Connection::Connection(int arg) {
     this->terminatedConnection = false;
 
     this->game = new Game(DEFAULT_DIM);
+    this->storage = nullptr;
 }
 
 Connection::~Connection() {
@@ -89,4 +90,17 @@ int Connection::getNumberOfQueuedActions() {
 int Connection::getId() {
     return this->id;
 }
+
+Game *Connection::getGame() {
+    return this->game;
+}
+
+ServerStorage *Connection::getStorage() {
+    return this->storage;
+}
+
+void Connection::connectStorage(ServerStorage * arg) {
+    this->storage = arg;
+}
+
 #undef DEFAULT_DIM
