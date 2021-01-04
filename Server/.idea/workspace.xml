@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Server" targetName="Server" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d13dcc8f-e353-4ff5-9cae-472fc2b96236" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ServerStorage.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServerStorage.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/Connection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/Connection.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/Connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/Connection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/cmake-build-debug/client.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clients.h" beforeDir="false" afterPath="$PROJECT_DIR$/Clients.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Connection.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/Connection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Server.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectionHandlerThread.h" beforeDir="false" afterPath="$PROJECT_DIR$/connectionHandlerThread.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processingThread.h" beforeDir="false" afterPath="$PROJECT_DIR$/processingThread.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readClientInputThread.h" beforeDir="false" afterPath="$PROJECT_DIR$/readClientInputThread.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1mNNPGkyQi2fkAssBmVPMQaAHFf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\semestralkaPos\Server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\semestralkaPos\Server" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Server" TARGET_NAME="Server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Server" RUN_TARGET_NAME="Server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d13dcc8f-e353-4ff5-9cae-472fc2b96236" name="Default Changelist" comment="" />
+      <created>1609330062151</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609330062151</updated>
+      <workItem from="1609330063810" duration="3578000" />
+      <workItem from="1609340670977" duration="5696000" />
+      <workItem from="1609422627160" duration="2618000" />
+      <workItem from="1609425289715" duration="677000" />
+      <workItem from="1609584647141" duration="3526000" />
+      <workItem from="1609599902113" duration="14285000" />
+      <workItem from="1609677824750" duration="19842000" />
+    </task>
+    <task id="LOCAL-00001" summary="server side threads added, communication with client estabilished">
+      <created>1609617806208</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609617806208</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="server side with working basic communication" />
+    <MESSAGE value="server side threads added, communication with client estabilished" />
+    <option name="LAST_COMMIT_MESSAGE" value="server side threads added, communication with client estabilished" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1609345100945">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609345100945" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1609698505163">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609698505163" />
+    <state width="936" height="263" key="GridCell.Tab.0.bottom" timestamp="1609698506296">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="745" height="263" key="GridCell.Tab.0.bottom/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609693798131" />
+    <state width="936" height="263" key="GridCell.Tab.0.bottom/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609698506296" />
+    <state width="936" height="263" key="GridCell.Tab.0.center" timestamp="1609698506296">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="745" height="263" key="GridCell.Tab.0.center/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609693798131" />
+    <state width="936" height="263" key="GridCell.Tab.0.center/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609698506296" />
+    <state width="936" height="263" key="GridCell.Tab.0.left" timestamp="1609698506296">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="745" height="263" key="GridCell.Tab.0.left/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609693798131" />
+    <state width="936" height="263" key="GridCell.Tab.0.left/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609698506296" />
+    <state width="936" height="263" key="GridCell.Tab.0.right" timestamp="1609698506296">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="745" height="263" key="GridCell.Tab.0.right/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609693798131" />
+    <state width="936" height="263" key="GridCell.Tab.0.right/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609698506296" />
+    <state width="938" height="352" key="GridCell.Tab.1.bottom" timestamp="1609617835423">
+      <screen x="-1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.bottom/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609617835423" />
+    <state width="938" height="352" key="GridCell.Tab.1.bottom/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609607802081" />
+    <state width="938" height="352" key="GridCell.Tab.1.center" timestamp="1609617835423">
+      <screen x="-1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.center/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609617835423" />
+    <state width="938" height="352" key="GridCell.Tab.1.center/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609607802081" />
+    <state width="938" height="352" key="GridCell.Tab.1.left" timestamp="1609617835421">
+      <screen x="-1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.left/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609617835421" />
+    <state width="938" height="352" key="GridCell.Tab.1.left/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609607802081" />
+    <state width="938" height="352" key="GridCell.Tab.1.right" timestamp="1609617835423">
+      <screen x="-1920" y="0" width="1536" height="840" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.right/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609617835423" />
+    <state width="938" height="352" key="GridCell.Tab.1.right/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609607802081" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1609680173563">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609680173563" />
+    <state x="-1559" y="150" key="Vcs.Push.Dialog.v2" timestamp="1609617821133">
+      <screen x="-1920" y="0" width="1536" height="840" />
+    </state>
+    <state x="-1559" y="150" key="Vcs.Push.Dialog.v2/-1920.0.1536.840/0.0.1920.1050@-1920.0.1536.840" timestamp="1609617821133" />
+    <state x="667" y="258" width="585" height="534" key="find.popup" timestamp="1609346245018">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="258" width="585" height="534" key="find.popup/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609346245018" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1609590294132">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609590294132" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1609610965576">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1609610965576" />
+  </component>
+</project>
