@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.7)
-project(client)
+project(Client)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(client main.cpp Connection.h Connection.cpp)
+add_executable(Client main.cpp Connection.cpp Connection.h pThread.h rThread.h)
+target_link_libraries(Client pthread ncurses)
