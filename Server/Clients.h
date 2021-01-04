@@ -11,7 +11,6 @@
 class Clients {
 private:
     vector<Connection*> connections;
-
     bool terminate;
 
 public:

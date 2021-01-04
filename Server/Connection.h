@@ -13,6 +13,7 @@
 #include <queue>
 
 #include "Game.h"
+#include "ServerStorage.h"
 
 #define DEFAULT_DIM 10
 
@@ -33,6 +34,7 @@ private:
     queue<string> * actionBuffer;
 
     Game * game;
+    ServerStorage * storage;
 
     bool terminatedConnection;
 
@@ -60,6 +62,10 @@ public:
     string getAction();
     void addAction(string arg);
     int getNumberOfQueuedActions();
+
+    Game * getGame();
+    ServerStorage * getStorage();
+    void connectStorage(ServerStorage * arg);
 };
 
 

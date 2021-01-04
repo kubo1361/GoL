@@ -38,6 +38,7 @@ void *rcitFun(void *args) {
                 cout << "Connection terminated - deleting read thread" << endl;
             }
             data->connection->setTerminateConnection(true);
+            pthread_cond_signal(&data->connection->getExecuteCond());
             return nullptr;
         }
 

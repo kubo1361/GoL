@@ -13,7 +13,9 @@ add_executable(Server
         readClientInputThread.h
         processingThread.h
         Game.cpp
-        Game.h)
+        Game.h
+        ServerStorage.cpp
+        ServerStorage.h)
 
-target_link_libraries(Server pthread ncurses)
+target_link_libraries(Server pthread ncurses stdc++fs)
 

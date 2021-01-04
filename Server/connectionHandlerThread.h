@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <iostream>
 
+#include "ServerStorage.h"
 #include "Connection.h"
 #include "Clients.h"
 #include "readClientInputThread.h"
@@ -19,6 +20,7 @@
 struct chtData {
     int * serverSocket;
     Clients * clients;
+    ServerStorage * storage;
     pthread_mutex_t * chtMut;
 };
 
@@ -36,6 +38,7 @@ void *chtFun(void *args) {
         cout << data->clients->getTerminate() << endl;
         if(data->clients->getTerminate()) {
             delete data->clients;
+            delete data->storage;
             cout << "Deleting Clients" << endl;
             return nullptr;
         }
@@ -51,6 +54,7 @@ void *chtFun(void *args) {
             return nullptr;
         }
         connection->setSocket(socket);
+        connection->connectStorage(data->storage);
         cout << "Connection estabilished" << endl;
 
         pthread_t rciThread, prThread;
