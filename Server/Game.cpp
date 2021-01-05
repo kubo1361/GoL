@@ -38,9 +38,9 @@ void Game::calculateState() {
             bool self = grid->at(x).at(y);
             int neighbors = countNeighbors(x, y);
 
-            if (self == false && neighbors == 3) {
+            if ((self == false) && (neighbors == 3)) {
                 secondaryGrid->at(x).at(y) = true;
-            } else if (self == true && (neighbors < 2 || neighbors > 3)) {
+            } else if ((self == true) && (neighbors < 2 || neighbors > 3)) {
                 secondaryGrid->at(x).at(y) = false;
             } else {
                 secondaryGrid->at(x).at(y) = self;
@@ -98,7 +98,6 @@ string Game::getState() {
             }
         }
     }
-    cout << "complete cells: " << livingCells << endl;
     return livingCells; // x_size;y_size;5 2,6 8,4 6, ....
 }
 
@@ -142,7 +141,6 @@ void Game::fillPositions(int rows, int cols, string argCells) {
             getline(splitCoordinates,line2,'.');
             coords[i] = stoi(line2);
         }
-        cout << "final: " << to_string(coords[0]) << " " << to_string(coords[1]) << endl;
         this->fillPosition(coords[0], coords[1]);
     }
 }
@@ -193,6 +191,11 @@ void Game::restart() {
 string Game::forwardStep() {
     this->calculateState();
     return this->getState();
+}
+
+string Game::backwardStep() {
+    //TODO backward
+    return "";
 }
 
 

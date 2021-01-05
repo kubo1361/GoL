@@ -15,8 +15,9 @@ Clients::~Clients() {
 }
 
 Connection * Clients::addConnection(int arg) {
-    this->connections.push_back(new Connection(arg));
-    return this->connections.back();
+    Connection * temp = new Connection(arg);
+    this->connections.push_back(temp);
+    return temp;
 }
 
 void Clients::removeConnection(int arg) {

@@ -26,7 +26,7 @@ void *rcitFun(void *args) {
 
     while(true) {
         bzero(buffer, BUFFER_LEN);
-        cout << "Waiting for clients command" << endl;
+        cout << "reading: " << data->connection->getId() << endl;
         n = read(data->connection->getSocket(), buffer, (BUFFER_LEN - 1));
 
 
@@ -41,8 +41,6 @@ void *rcitFun(void *args) {
             pthread_cond_signal(&data->connection->getExecuteCond());
             return nullptr;
         }
-
-        cout << "Clients command received" << endl;
 
         message = buffer;
 
