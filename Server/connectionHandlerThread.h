@@ -34,19 +34,18 @@ void *chtFun(void *args) {
         connection = data->clients->addConnection(time(0));
         pthread_mutex_unlock(data->chtMut);
 
-        /* TODO zistit ako zmazat vlakno bez toho aby sa zaseklo na accept
-        cout << data->clients->getTerminate() << endl;
-        if(data->clients->getTerminate()) {
-            delete data->clients;
-            delete data->storage;
-            cout << "Deleting Clients" << endl;
-            return nullptr;
-        }
-        */
 
         cout << "Waiting for connection" << endl;
         socket = accept(*(data->serverSocket), (struct sockaddr *) &(connection->getClientAddress()),
                         &(connection->getClientAddressLength()));
+
+        if(data->clients->getTerminate()) {
+            delete data->clients;
+            delete data->storage;
+            cout << "Deleting Clients" << endl;
+            cout << "Deleting Storage" << endl;
+            return nullptr;
+        }
 
         pthread_mutex_lock(data->chtMut);
         if (socket < 0) {
@@ -55,7 +54,7 @@ void *chtFun(void *args) {
         }
         connection->setSocket(socket);
         connection->connectStorage(data->storage);
-        cout << "Connection estabilished" << endl;
+        cout << "Connection estabilished: " << connection->getId() << endl;
 
         pthread_t rciThread, prThread;
 
@@ -66,11 +65,11 @@ void *chtFun(void *args) {
         dataPrt.clients = data->clients;
 
         pthread_create(&rciThread, NULL, &rcitFun, (void *)&dataRcit);
-        pthread_detach(rciThread);
-
         pthread_create(&prThread, NULL, &prtFun, (void *)&dataPrt);
-        pthread_detach(prThread);
 
+        pthread_detach(rciThread);
+        pthread_detach(prThread);
+        connection = nullptr;
         pthread_mutex_unlock(data->chtMut);
     }
 }

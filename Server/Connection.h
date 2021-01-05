@@ -28,7 +28,6 @@ private:
     socklen_t clientAddressLength;
 
     pthread_mutex_t connectionMediatorMut;
-    pthread_cond_t readCond;
     pthread_cond_t executeCond;
 
     queue<string> * actionBuffer;
@@ -53,7 +52,6 @@ public:
 
     pthread_mutex_t &getConnectionMediatorMut();
 
-    pthread_cond_t &getReadCond();
     pthread_cond_t &getExecuteCond();
 
     bool isTerminatedConnection();

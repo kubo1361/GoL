@@ -7,8 +7,6 @@
 #include <unistd.h>
 
 #include "connectionHandlerThread.h"
-#include "ServerStorage.h"
-
 
 
 using namespace std;
@@ -38,10 +36,9 @@ int main(int argc, char *argv[]) {
         return 2;
     }
 
-    cout << "Listening for communication requests" << endl;
     listen(serverSocket, HOST_COUNT);
 
-    Clients * clients = new Clients(); //redundant
+    Clients * clients = new Clients();
     ServerStorage * storage = new ServerStorage();
     pthread_t chThread;
     pthread_mutex_t chtMut = PTHREAD_MUTEX_INITIALIZER;
@@ -65,18 +62,19 @@ int main(int argc, char *argv[]) {
     while (true) {
         char n = getch();
         if (n == 113) {
-            close(serverSocket);
             clients->setTerminate(true);
+            pthread_mutex_destroy(&chtMut);
+            shutdown(serverSocket, SHUT_RDWR);
+            close(serverSocket);
             endwin();
-            sleep(1);
             cout << "Shutting down server" << endl;
+            sleep(2);
             return 0;
         }
     }
 }
+
 //FIXME su tu problemy ked je viac ludi naraz pripojenych
-//FIXME server storage - nenacitava patterny
-//FIXME server storage - neuklada storage po vypnuti serveru
 //TODO nainstaluj WSL a fixni memory leaky
 #undef PORT
 #undef HOST_COUNT

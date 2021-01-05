@@ -16,7 +16,7 @@ ServerStorage::ServerStorage() {
         stringstream  splitLine(fileLine);
         string part;
         for (int i = 0; i < 2; ++i) {
-            getline(splitLine,part,';');
+            getline(splitLine,part,':');
             partsOfPattern[i] = part;
         }
         this->patterns.insert(pair<string, string>(partsOfPattern[0], partsOfPattern[1]));
@@ -28,7 +28,7 @@ ServerStorage::~ServerStorage() {
     ofstream writeFile(this->file);
 
     for(auto kv : this->patterns) {
-        writeFile << kv.first << ";" << kv.second << endl;
+        writeFile << kv.first << ":" << kv.second << endl;
     }
 
     writeFile.close();
@@ -51,9 +51,25 @@ string ServerStorage::getPattern(string argName) {
 }
 
 void ServerStorage::addPattern(string argName, string argPattern) {
-    this->patterns.insert(pair<string, string>(argName, argPattern));
+    string temp = this->rename(argName, 1);
+    this->patterns.insert(pair<string, string>(temp, argPattern));
+}
+
+string ServerStorage::rename(string argName, int number) {
+    int add = number;
+    string temp = argName;
+    for (auto kv : this->patterns) {
+        if (kv.first == argName) {
+            temp = kv.first + to_string(add);
+            add++;
+            this->rename(temp, add);
+        }
+    }
+    return temp;
 }
 
 void ServerStorage::removePattern(string argName) {
     this->patterns.erase(argName);
 }
+
+
