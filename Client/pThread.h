@@ -17,7 +17,6 @@
 #include <string.h>
 #include <netdb.h>
 
-#define BUFF 256
 
 struct poTData{
     Connection * con;
@@ -26,39 +25,68 @@ struct poTData{
 void * pThreadF(void* connect) {
 
     poTData* con = (poTData *)connect;
-    string action = "Nemam spravu";
-    int  n;
-    char buffer[BUFF];
-
+    string action;
+    string create =con->con->getMenu()->start();
+    string message;
+    string cmessage;
+    string meno;
+    bool pause = false;
+    con->con->showMenu();
     while(true) {
-        n= 0;
+        cin >> action;
+        con->con->getValid() = false;
+        switch (stoi(action)){
+            case 1:
+                message = create;
+                break;
+            case 2:
+                message = "forwardStep";
+                cmessage = message;
+                pause = false;
+                break;
+            case 3:
+                message ="backwardStep";
+                cmessage = message;
+                pause = false;
+                break;
+            case 4:
+                pause = true;
+                message = cmessage;
 
+                break;
+            case 5:
+                pause = false;
+                message = cmessage;
+                con->con->getValid() = !pause;
 
+                break;
+            case 6:
+                cout << "Nazov paternu "<< endl;
+                cin >> meno;
+                message= "savePattern;" + meno;
+                break;
+            case 7:
+                message = "loadPatternNames;";
+                pause = true;
+                break;
+            default :
+                cout << "zle si zadal " << endl;
+                break;
 
-        printf("Welcome in Game Of Life \n");
-        printf("Napis co ta trapi na srdiecku \n");
-        bzero(buffer,BUFF);
-        fgets(buffer, 255, stdin);
-
-        n = write(con->con->getSocketServer(), buffer, strlen(buffer));
-        if (n < 0) {
-            perror("Error writing to socket");
-            return nullptr;
         }
-        pthread_cond_broadcast(&con->con->getCondR());
+
         pthread_mutex_lock(&con->con->getMut());
-        while(con->con->getQueueSize() == 0) {
-            pthread_cond_wait(&con->con->getCondW(), &con->con->getMut());
 
-        }
+        con->con->writeAction(message);
 
+        /*cout << "WRITE uloz spravu: " << endl;
+        cout << "WRITE uloz spravu: " << con->con->itHasAction() << endl;*/
 
-        action = con->con->getAction();
-       //todo spracuj akciu
-
-        cout << "Toto je kubova odpoved " << action << endl;
-        pthread_cond_broadcast(&con->con->getCondR());
+        pthread_cond_signal(&con->con->getCondR());
         pthread_mutex_unlock(&con->con->getMut());
+
+        con->con->getValid() = !pause;
+
 
 
     }

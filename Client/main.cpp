@@ -3,19 +3,18 @@
 #include "pThread.h"
 #include <pthread.h>
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
 #include <unistd.h>
-#include <stdlib.h>
+
 #include <stdio.h>
 #include <string.h>
 #include <netdb.h>
 #include <curses.h>
 
 #define PORT 31313
-#define BUFF 256
+#define BUFF 1000
+
 int main (int argc, char* argv[]){
+
     Connection* con = new Connection(15);
     struct hostent* serv = gethostbyname("frios2.fri.uniza.sk");
 
@@ -44,15 +43,17 @@ int main (int argc, char* argv[]){
         perror("Nastala chyba pri vytvoreni socketu");
         return 3;
     }
+
     if(connect(con->getSocketServer(), (struct sockaddr*)&con->getAddress(), sizeof(con->getAddress())) < 0)
     {
         perror("Error connecting to socket");
         return 4;
     }
+
     pthread_t rThread;
     pthread_t prThread;
-    pthread_mutex_lock(&con->getMut());
-
+    Game* g = new Game(0,0);
+    con->setGame(g);
     poTData dataa;
     dataa.con = con;
     pthread_create(&prThread, NULL, &pThreadF, (void*) &dataa);
@@ -62,15 +63,16 @@ int main (int argc, char* argv[]){
     data.con = con;
     pthread_create(&rThread, NULL, &rThreadF, (void*) &data);
     pthread_detach(rThread);
-    pthread_mutex_unlock(&con->getMut());
+/*
     sleep(1);
     cout << "Press \"q\"to close" << endl;
     initscr();
     raw();
     noecho();
     cbreak();
-
+*/
     while (true) {
+        /*
         char n = getch();
         if (n == 113) {
             close(con->getSocketServer());
@@ -80,6 +82,7 @@ int main (int argc, char* argv[]){
             cout << "Shutting down client" << endl;
             return 0;
         }
+         */
     }
 
 }

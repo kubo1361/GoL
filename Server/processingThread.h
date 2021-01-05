@@ -71,9 +71,9 @@ void * prtFun(void *args) {
                     stoi(action_full[1]),
                     stoi(action_full[2]),
                     stoi(action_full[3]));
-            temp = data->connection->getGame()->getState();
+            temp = "randomPattern;" +data->connection->getGame()->getState();
             cout << temp << endl;
-            write(data->connection->getSocket(), temp.c_str(), temp.length());
+            write(data->connection->getSocket(), temp.c_str(), temp.length()+2);
 
         } else if (action_full[0].compare("defineCells") == 0) { // action: defineCells;size_x;_size_y;livingCells, return: Success
             data->connection->getGame()->fillPositions(
@@ -86,12 +86,13 @@ void * prtFun(void *args) {
 
         } else if (action_full[0].compare("forwardStep") == 0) { // action: forwardStep, return: size_x;_size_y;livingCells
             cout << "execute: forwardStep" << action_full[0] << endl;
-            temp = data->connection->getGame()->forwardStep();
+            temp = "forwardStep;" +data->connection->getGame()->forwardStep();
             cout << temp << endl;
             write(data->connection->getSocket(), temp.c_str(), temp.length());
 
         } else if (action_full[0].compare("backwardStep") == 0) { // action: backwardStep, return: size_x;_size_y;livingCells
             //TODO completes 1 backward step of a simulation and sends positions of living cells
+
 
         } else if (action_full[0].compare("savePattern") == 0) { // action: savePattern;name, return: success
             cout << "execute: savePattern" << action_full[0] << endl;

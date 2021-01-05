@@ -13,24 +13,28 @@
 #include <queue>
 #include <pthread.h>
 #include <iostream>
+#include "Game.h"
+#include "Menu.h"
 
 using namespace std;
 
 class Connection {
 private:
-
-    int id;
     int socket;
     sockaddr_in address = sockaddr_in();
     bool valid = false;
     socklen_t length = 0;
 
+    Game* game;
+    Menu* menu;
+
+
     pthread_t rThread;
     pthread_mutex_t mut;
     pthread_cond_t condR,condW;
 
-
-    queue<string> * actionBuf;
+    string action;
+    bool hasAction;
 
 
 public:
@@ -39,8 +43,12 @@ public:
     Connection(int id);
     virtual ~Connection();
 
+    void setGame(Game* g);
+    Menu* getMenu();
+    Game* getGame();
+    void showMenu();
+
     bool& getValid();
-    int getId();
     int& getSocketServer();
     sockaddr_in& getAddress();
     socklen_t& getAddressLength();
@@ -49,9 +57,10 @@ public:
     pthread_mutex_t& getMut();
     pthread_cond_t& getCondR();
     pthread_cond_t& getCondW();
-    void addAction(string arg);
-    int getQueueSize();
-    string getAction();
+
+    string readAction();
+    void writeAction(string response);
+    bool itHasAction();
 
 };
 
