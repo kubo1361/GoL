@@ -12,14 +12,13 @@
 
 #include "ServerStorage.h"
 #include "Connection.h"
-#include "Clients.h"
 #include "readClientInputThread.h"
 #include "processingThread.h"
 #include <time.h>
 
 struct chtData {
     int * serverSocket;
-    Clients * clients;
+    bool * terminate;
     ServerStorage * storage;
     pthread_mutex_t * chtMut;
 };
@@ -31,7 +30,7 @@ void *chtFun(void *args) {
 
     while (true) {
         pthread_mutex_lock(data->chtMut);
-        connection = data->clients->addConnection(time(0));
+        connection = new Connection(time(0));
         pthread_mutex_unlock(data->chtMut);
 
 
@@ -39,10 +38,9 @@ void *chtFun(void *args) {
         socket = accept(*(data->serverSocket), (struct sockaddr *) &(connection->getClientAddress()),
                         &(connection->getClientAddressLength()));
 
-        if(data->clients->getTerminate()) {
-            delete data->clients;
+        if(*data->terminate) {
             delete data->storage;
-            cout << "Deleting Clients" << endl;
+            cout << "Deleting accept thread" << endl;
             cout << "Deleting Storage" << endl;
             return nullptr;
         }
@@ -61,16 +59,18 @@ void *chtFun(void *args) {
         rcitData dataRcit;
         prtData dataPrt;
         dataRcit.connection = connection;
+        dataRcit.terminate = data->terminate;
         dataPrt.connection = connection;
-        dataPrt.clients = data->clients;
+        dataPrt.terminate = data->terminate;
+        dataPrt.chtMut = data->chtMut;
+
+        pthread_create(&prThread, NULL, &prtFun, (void *)&dataPrt);
+        pthread_detach(prThread);
 
         pthread_create(&rciThread, NULL, &rcitFun, (void *)&dataRcit);
-        pthread_create(&prThread, NULL, &prtFun, (void *)&dataPrt);
-
         pthread_detach(rciThread);
-        pthread_detach(prThread);
+
         connection = nullptr;
-        pthread_mutex_unlock(data->chtMut);
     }
 }
 

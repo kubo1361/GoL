@@ -38,14 +38,14 @@ int main(int argc, char *argv[]) {
 
     listen(serverSocket, HOST_COUNT);
 
-    Clients * clients = new Clients();
+    bool terminateAccept = false;
     ServerStorage * storage = new ServerStorage();
     pthread_t chThread;
     pthread_mutex_t chtMut = PTHREAD_MUTEX_INITIALIZER;
 
     chtData data;
     data.serverSocket = &serverSocket;
-    data.clients = clients;
+    data.terminate = &terminateAccept;
     data.storage = storage;
     data.chtMut = &chtMut;
 
@@ -62,19 +62,18 @@ int main(int argc, char *argv[]) {
     while (true) {
         char n = getch();
         if (n == 113) {
-            clients->setTerminate(true);
+            cout << "Shutting down server" << endl;
+            terminateAccept = true;
             pthread_mutex_destroy(&chtMut);
             shutdown(serverSocket, SHUT_RDWR);
             close(serverSocket);
             endwin();
-            cout << "Shutting down server" << endl;
             sleep(2);
             return 0;
         }
     }
 }
 
-//FIXME su tu problemy ked je viac ludi naraz pripojenych
 //TODO nainstaluj WSL a fixni memory leaky
 #undef PORT
 #undef HOST_COUNT
