@@ -79,16 +79,19 @@ void *prtFun(void *args) {
                     stoi(action_full[1]),
                     stoi(action_full[2]),
                     stoi(action_full[3]));
+
             temp = "randomPattern;" + data.connection->getGame()->getState();
             cout << temp << endl;
         } else if (action_full[0].compare("defineCells") == 0) {
             // action: defineCells;size_x;_size_y;livingCells, return: defineCells;size_x;_size_y;livingCells
             data.connection->getGame()->fillPositions(
+
                     stoi(action_full[1]),
                     stoi(action_full[2]),
                     action_full[3]);
             temp = "defineCells;" + data.connection->getGame()->getState();
             cout << temp << endl;
+
         } else if (action_full[0].compare("forwardStep") == 0) {
             // action: forwardStep, return: size_x;_size_y;livingCells
             temp = "forwardStep;" + data.connection->getGame()->forwardStep();

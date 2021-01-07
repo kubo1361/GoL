@@ -12,16 +12,17 @@ Connection::Connection() {
 
 
 Connection::Connection(int id) {
-
-    this->id = id;
     bzero(&this->address, sizeof(this->address));
     this->valid = true;
     pthread_mutex_init(&(this->mut), NULL);
     pthread_cond_init(&(this->condR), NULL);
     pthread_cond_init(&(this->condW), NULL);
 
-    this->actionBuf = new queue<string>();
+    this->action = "";
+    this->hasAction = false;
 
+    this->game = nullptr;
+    this->menu = new Menu();
 }
 
 Connection::~Connection() {
@@ -31,17 +32,19 @@ Connection::~Connection() {
         close(this->socket);
     }
 
-
-    delete this->actionBuf;
     pthread_cond_destroy(&(this->condR));
     pthread_cond_destroy(&(this->condW));
     pthread_mutex_destroy(&(this->mut));
 
 }
-
-
-int Connection::getId() {
-    return this->id;
+void Connection::setGame(Game *g) {
+    this->game = g;
+}
+Menu* Connection::getMenu() {
+    return this->menu;
+}
+Game* Connection::getGame() {
+    return this->game;
 }
 
 int& Connection::getSocketServer() {
@@ -74,16 +77,37 @@ pthread_cond_t& Connection::getCondW() {
 bool &Connection::getValid() {
     return this->valid;
 }
-void Connection::addAction(string action) {
-    this->actionBuf->push(action);
+bool &Connection::getActiveCon() {
+    return this->activeConnection;
 }
-int Connection::getQueueSize() {
-    return this->actionBuf->size();
+
+string Connection::readAction() {
+    this->hasAction = false;
+    return this->action;
 }
-string Connection::getAction() {
-    if (actionBuf->empty()) {
-        return "No more actions";
-    } else {
-        return  actionBuf->front();
-    }
+
+void Connection::writeAction(string response) {
+    this->hasAction = true;
+    this->action = response;
 }
+
+bool Connection::itHasAction() {
+    return this->hasAction;
+}
+
+void Connection::showMenu() {
+    cout << "1: Nacitaj hru" << endl;
+    cout << "2: Krok dopredu" << endl;
+    cout << "3: Krok dozadu" << endl;
+    cout << "4: Pauza" << endl;
+    cout << "5: Pokracuj" << endl;
+    cout << "6: Vymaz aktualnu hru zo serveru" << endl;
+    cout << "7: Uloz" << endl;
+    cout << "8: Nacitaj zo serveru" << endl;
+    cout << "0: Koniec hry" << endl;
+}
+bool& Connection::getReading() {
+    return this->reading;
+}
+
+
