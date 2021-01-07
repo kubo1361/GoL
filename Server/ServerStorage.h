@@ -26,6 +26,7 @@ public:
     string getPattern(string argName);
     void addPattern(string argName, string argPattern);
     void removePattern(string argName);
+    string rename(string arg, int number);
 };
 
 

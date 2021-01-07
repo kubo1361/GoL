@@ -16,40 +16,43 @@
 
 struct rcitData {
     Connection * connection;
+    bool * terminate;
 };
 
 void *rcitFun(void *args) {
-    rcitData *data = (rcitData *) args;
+    rcitData * tempData = (rcitData *) args;
     int n = 0;
     char buffer[BUFFER_LEN];
     string message;
 
+    rcitData data;
+    data.connection = tempData->connection;
+    data.terminate = tempData->terminate;
+
     while(true) {
         bzero(buffer, BUFFER_LEN);
-        cout << "Waiting for clients command" << endl;
-        n = read(data->connection->getSocket(), buffer, (BUFFER_LEN - 1));
+        cout << "reading: " << data.connection->getId() << endl;
+        n = read(data.connection->getSocket(), buffer, (BUFFER_LEN - 1));
 
 
-        if (n <= 0) {
+        if (n <= 0 || *data.terminate) {
             if(n == 0) {
                 cout << "Connection ended - deleting read thread" << endl;
             } else {
                 perror("Error reading from socket");
                 cout << "Connection terminated - deleting read thread" << endl;
             }
-            data->connection->setTerminateConnection(true);
-            pthread_cond_signal(&data->connection->getExecuteCond());
+            data.connection->setTerminateConnection(true);
+            pthread_cond_signal(&data.connection->getExecuteCond());
             return nullptr;
         }
 
-        cout << "Clients command received" << endl;
-
         message = buffer;
 
-        pthread_mutex_lock(&data->connection->getConnectionMediatorMut());
-        data->connection->addAction(message);
-        pthread_cond_signal(&data->connection->getExecuteCond());
-        pthread_mutex_unlock(&data->connection->getConnectionMediatorMut());
+        pthread_mutex_lock(&data.connection->getConnectionMediatorMut());
+        data.connection->addAction(message);
+        pthread_mutex_unlock(&data.connection->getConnectionMediatorMut());
+        pthread_cond_signal(&data.connection->getExecuteCond());
 
     }
 }

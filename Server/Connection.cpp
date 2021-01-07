@@ -6,13 +6,12 @@
 
 Connection::Connection(int arg) {
     this->id = arg;
-    this->clientAddressLength = sizeof(clientAddress);
-    bzero(&this->clientAddress, this->clientAddressLength);
+    this->clientAddressLength = 0;
+    bzero(&this->clientAddress, sizeof(clientAddress));
 
     this->actionBuffer = new queue<string>();
 
     pthread_mutex_init(&(this->connectionMediatorMut), NULL);
-    pthread_cond_init(&(this->readCond), NULL);
     pthread_cond_init(&(this->executeCond), NULL);
 
     this->terminatedConnection = false;
@@ -25,8 +24,8 @@ Connection::~Connection() {
     delete actionBuffer;
 
     pthread_mutex_destroy(&(this->connectionMediatorMut));
-    pthread_cond_destroy(&(this->readCond));
     pthread_cond_destroy(&(this->executeCond));
+    shutdown(this->socket, SHUT_RD);
     close(this->socket);
 
     delete game;
@@ -52,9 +51,6 @@ pthread_mutex_t& Connection::getConnectionMediatorMut() {
     return this->connectionMediatorMut;
 }
 
-pthread_cond_t &Connection::getReadCond() {
-    return this->readCond;
-}
 
 pthread_cond_t &Connection::getExecuteCond() {
     return this->executeCond;
