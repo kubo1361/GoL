@@ -77,6 +77,9 @@ pthread_cond_t& Connection::getCondW() {
 bool &Connection::getValid() {
     return this->valid;
 }
+bool &Connection::getActiveCon() {
+    return this->activeConnection;
+}
 
 string Connection::readAction() {
     this->hasAction = false;
@@ -98,8 +101,12 @@ void Connection::showMenu() {
     cout << "3: Krok dozadu" << endl;
     cout << "4: Pauza" << endl;
     cout << "5: Pokracuj" << endl;
-    cout << "6: Uloz" << endl;
-    cout << "7: Nacitaj zo serveru" << endl;
+    cout << "6: Vymaz aktualnu hru zo serveru" << endl;
+    cout << "7: Uloz" << endl;
+    cout << "8: Nacitaj zo serveru" << endl;
+}
+bool& Connection::getReading() {
+    return this->reading;
 }
 
 

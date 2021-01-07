@@ -23,8 +23,9 @@ private:
     int socket;
     sockaddr_in address = sockaddr_in();
     bool valid = false;
+    bool reading = true;
     socklen_t length = 0;
-
+    bool activeConnection = true;
     Game* game;
     Menu* menu;
 
@@ -48,7 +49,9 @@ public:
     Game* getGame();
     void showMenu();
 
+    bool& getReading();
     bool& getValid();
+    bool& getActiveCon();
     int& getSocketServer();
     sockaddr_in& getAddress();
     socklen_t& getAddressLength();

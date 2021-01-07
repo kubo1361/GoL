@@ -20,7 +20,7 @@ void * rThreadF(void* con) {
     string response;
     string action_raw;
     vector<string> action_full;
-
+    string lastLoadedPattern;
     while(true) {
 
 
@@ -66,23 +66,21 @@ void * rThreadF(void* con) {
             }
 
             if(connect->con->getValid()){
-            if (action_full[0].compare("loadPatternNames") ==
-                0) { // action: loadPatternNames, return: name1;name2;name3;...
-                stringstream  splitCells(action_full[1]);
-                string line1;
+            if (action_full[0].compare("loadPatternNames") ==0) { // action: loadPatternNames, return: name1;name2;name3;...
+                cout << action_full.at(0) << endl;
                 cout << "Vyber subor ktory chces nacitat :" << endl;
-                int i = 1;
-                vector<string> action_name;
-                while(getline(splitCells,line1,','))
+                for(int i = 1; i < action_full.size(); i++)
                 {
-                    cout << i + " " + line1 << endl;
-                    i++;
-                    action_name.push_back(line1);
+                    cout << i + " " + action_full.at(i) << endl;
+
+
                 }
+                cout << "Vyber subor ktory chces nacitat po vypise :" << endl;
                 int poradie;
                 cin >> poradie;
-                action = "loadPattern;" + action_name[poradie -1];
-
+                action = "loadPattern;" + action_full.at(poradie);
+                cout << action << endl;
+                connect->con->getGame()->getName() = action_full.at(poradie);
                 n = write(connect->con->getSocketServer(), action.c_str(), action.length());
 
                 if (n < 0) {
@@ -120,6 +118,7 @@ void * rThreadF(void* con) {
                     connect->con->getGame()->clearScreen();
                     connect->con->getGame()->printGrid();
                     connect->con->getValid() = false;
+                    connect->con->getReading() = true;
 
                 }
             } else if (action_full[0].compare("randomPattern") ==
@@ -167,8 +166,13 @@ void * rThreadF(void* con) {
 
             } else if (action_full[0].compare("savePattern") == 0) { // action: savePattern;name, return: success
                 cout << "Pattern Saved" << endl;
+
                 connect->con->getValid() = false;
-                // fixme
+
+            } else if (action_full[0].compare("removePattern") == 0) { // action: savePattern;name, return: success
+                cout << "Pattern Removed" << endl;
+                connect->con->getValid() = false;
+
             }
 
             action_full.clear();

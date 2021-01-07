@@ -18,7 +18,7 @@ Game::Game(int rows, int cols) {
     srand(time(NULL));
     this->rows = rows;
     this->cols = cols;
-
+    this->name = " ";
     grid = new vector<vector<bool>>(rows, vector<bool>(cols, 0));
     //secondaryGrid =  new vector<vector<bool>>(rows, vector<bool>(cols, 0));
 }
@@ -101,4 +101,7 @@ void Game::restart() {
 
     this->grid = new vector<vector<bool>>(rows, vector<bool>(cols, 0));
 
+}
+string& Game::getName() {
+    return this->name;
 }

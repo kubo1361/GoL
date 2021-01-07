@@ -33,61 +33,79 @@ void * pThreadF(void* connect) {
     bool pause = false;
     con->con->showMenu();
     while(true) {
-        cin >> action;
-        con->con->getValid() = false;
-        switch (stoi(action)){
-            case 1:
-                message = create;
-                break;
-            case 2:
-                message = "forwardStep";
-                cmessage = message;
-                pause = false;
-                break;
-            case 3:
-                message ="backwardStep";
-                cmessage = message;
-                pause = false;
-                break;
-            case 4:
-                pause = true;
-                message = cmessage;
+        if (con->con->getReading()) {
+            cin >> action;
+            con->con->getValid() = false;
+            switch (stoi(action)) {
+                case 0:
+                    cout << "Program konci " << endl;
+                    con->con->getActiveCon() = false;
+                case 1:
+                    message = create;
+                    break;
+                case 2:
+                    message = "forwardStep";
+                    cmessage = message;
+                    pause = false;
+                    break;
+                case 3:
+                    message = "backwardStep";
+                    cmessage = message;
+                    pause = false;
+                    break;
+                case 4:
+                    pause = true;
+                    message = cmessage;
 
-                break;
-            case 5:
-                pause = false;
-                message = cmessage;
-                con->con->getValid() = !pause;
+                    break;
+                case 5:
+                    pause = false;
+                    message = cmessage;
+                    con->con->getValid() = !pause;
 
-                break;
-            case 6:
-                cout << "Nazov paternu "<< endl;
-                cin >> meno;
-                message= "savePattern;" + meno;
-                break;
-            case 7:
-                message = "loadPatternNames;";
-                pause = true;
-                break;
-            default :
-                cout << "zle si zadal " << endl;
-                break;
+                    break;
+                case 6:
+                    pause = false;
+                    con->con->getGame()->getName();
+                    if(con->con->getGame()->getName().compare(" ") != 0 ) {
+                        message = "removePattern;" + con->con->getGame()->getName();
+                    } else {
+                        cout << "Nieje co zmazat, aktualna hra nie je ulozena na servery !" << endl;
+                        pause = true;
+                        message = "empty";
+                        con->con->showMenu();
+                    }
+
+                    break;
+                case 7:
+                    pause = false;
+                    cout << "Nazov paternu " << endl;
+                    cin >> meno;
+                    message = "savePattern;" + meno;
+                    con->con->getGame()->getName() = meno;
+                    break;
+
+                case 8:
+                    pause = false;
+                    con->con->getReading() = false;
+                    message = "loadPatternNames;";
+
+                    break;
+                default :
+                    cout << "zle si zadal " << endl;
+                    break;
+
+            }
+
+            pthread_mutex_lock(&con->con->getMut());
+
+            con->con->writeAction(message);
+            pthread_cond_signal(&con->con->getCondR());
+            pthread_mutex_unlock(&con->con->getMut());
+
+            con->con->getValid() = !pause;
 
         }
-
-        pthread_mutex_lock(&con->con->getMut());
-
-        con->con->writeAction(message);
-
-        /*cout << "WRITE uloz spravu: " << endl;
-        cout << "WRITE uloz spravu: " << con->con->itHasAction() << endl;*/
-
-        pthread_cond_signal(&con->con->getCondR());
-        pthread_mutex_unlock(&con->con->getMut());
-
-        con->con->getValid() = !pause;
-
-
 
     }
 
