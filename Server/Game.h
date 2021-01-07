@@ -40,7 +40,7 @@ public:
     string getState();
 
     string forwardStep();
-    //TODO string backwardStep();
+    string backwardStep();
 };
 
 

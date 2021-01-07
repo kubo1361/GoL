@@ -12,14 +12,13 @@
 
 #include "ServerStorage.h"
 #include "Connection.h"
-#include "Clients.h"
 #include "readClientInputThread.h"
 #include "processingThread.h"
 #include <time.h>
 
 struct chtData {
     int * serverSocket;
-    Clients * clients;
+    bool * terminate;
     ServerStorage * storage;
     pthread_mutex_t * chtMut;
 };
@@ -31,22 +30,20 @@ void *chtFun(void *args) {
 
     while (true) {
         pthread_mutex_lock(data->chtMut);
-        connection = data->clients->addConnection(time(0));
+        connection = new Connection(time(0));
         pthread_mutex_unlock(data->chtMut);
 
-        /* TODO zistit ako zmazat vlakno bez toho aby sa zaseklo na accept
-        cout << data->clients->getTerminate() << endl;
-        if(data->clients->getTerminate()) {
-            delete data->clients;
-            delete data->storage;
-            cout << "Deleting Clients" << endl;
-            return nullptr;
-        }
-        */
 
         cout << "Waiting for connection" << endl;
         socket = accept(*(data->serverSocket), (struct sockaddr *) &(connection->getClientAddress()),
                         &(connection->getClientAddressLength()));
+
+        if(*data->terminate) {
+            delete data->storage;
+            cout << "Deleting accept thread" << endl;
+            cout << "Deleting Storage" << endl;
+            return nullptr;
+        }
 
         pthread_mutex_lock(data->chtMut);
         if (socket < 0) {
@@ -55,23 +52,25 @@ void *chtFun(void *args) {
         }
         connection->setSocket(socket);
         connection->connectStorage(data->storage);
-        cout << "Connection estabilished" << endl;
+        cout << "Connection estabilished: " << connection->getId() << endl;
 
         pthread_t rciThread, prThread;
 
         rcitData dataRcit;
         prtData dataPrt;
         dataRcit.connection = connection;
+        dataRcit.terminate = data->terminate;
         dataPrt.connection = connection;
-        dataPrt.clients = data->clients;
-
-        pthread_create(&rciThread, NULL, &rcitFun, (void *)&dataRcit);
-        pthread_detach(rciThread);
+        dataPrt.terminate = data->terminate;
+        dataPrt.chtMut = data->chtMut;
 
         pthread_create(&prThread, NULL, &prtFun, (void *)&dataPrt);
         pthread_detach(prThread);
 
-        pthread_mutex_unlock(data->chtMut);
+        pthread_create(&rciThread, NULL, &rcitFun, (void *)&dataRcit);
+        pthread_detach(rciThread);
+
+        connection = nullptr;
     }
 }
 
