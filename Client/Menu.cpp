@@ -35,6 +35,7 @@ string Menu::start() {
         cout << "1. Define living cells yourself" << endl;
         cout << "2. Random distribution of \"x\" living cells" << endl;
         cout << "3. Load configuration from a file" << endl;
+        cout << "4. Load configuration from server" << endl;
         cin >> startMethod;
     } while (startMethod < 0 || startMethod > 4);
 
@@ -66,7 +67,7 @@ string Menu::start() {
         }
 
 
-    } else {
+    } else if(startMethod == 3){
 
         while (true) {
             cout << "Enter name of the file to read from: " << endl;
@@ -107,6 +108,8 @@ string Menu::start() {
         }
         string message ="defineCells;"+ rows + ";" + cols + ";" + living;
         return message;
+    } else {
+        return  "loadPatternNames";
     }
 
 }

@@ -63,15 +63,8 @@ int main (int argc, char* argv[]){
     data.con = con;
     pthread_create(&rThread, NULL, &rThreadF, (void*) &data);
     pthread_detach(rThread);
-/*
-    sleep(1);
-    cout << "Press \"q\"to close" << endl;
-    initscr();
-    raw();
-    noecho();
-    cbreak();
-*/
-    while (true) {
+
+    while (con->getActiveCon()) {
         /*
         char n = getch();
         if (n == 113) {
@@ -84,6 +77,7 @@ int main (int argc, char* argv[]){
         }
          */
     }
-
+    close(con->getSocketServer());
+    return 0;
 }
 

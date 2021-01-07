@@ -15,15 +15,16 @@ class Game {
 private:
     int rows;
     int cols;
-
+    string name;
     vector<vector<bool>> * grid;
-    vector<vector<bool>> * secondaryGrid;
+
 
 public:
     Game(int dims);
     Game(int rows, int cols);
     ~Game();
 
+    string& getName();
     void clearScreen();
     void printGrid();
     void simulate(int number);
