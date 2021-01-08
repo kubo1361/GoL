@@ -97,15 +97,14 @@ bool Connection::itHasAction() {
 }
 
 void Connection::showMenu() {
-    cout << "1: Nacitaj hru" << endl;
-    cout << "2: Krok dopredu" << endl;
-    //cout << "3: Krok dozadu" << endl;
-    cout << "3: Pauza" << endl;
-    cout << "4: Pokracuj" << endl;
-    cout << "5: Vymaz aktualnu hru zo serveru" << endl;
-    cout << "6: Uloz" << endl;
-    cout << "7: Nacitaj zo serveru" << endl;
-    cout << "0: Koniec hry" << endl;
+    cout << "1: Load game" << endl;
+    cout << "2: Play" << endl;
+    cout << "3: Pause" << endl;
+    cout << "4: Continue" << endl;
+    cout << "5: Delete actual game from server" << endl;
+    cout << "6: Save" << endl;
+    cout << "7: Load from server" << endl;
+    cout << "0: End game" << endl;
 }
 bool& Connection::getReading() {
     return this->reading;
