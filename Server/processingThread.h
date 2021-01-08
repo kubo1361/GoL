@@ -27,7 +27,6 @@ void *prtFun(void *args) {
     vector<string> action_full;
 
     prtData data;
-    data.terminate = tempData->terminate;
     data.connection = tempData->connection;
     pthread_mutex_unlock(tempData->chtMut);
 
@@ -36,7 +35,7 @@ void *prtFun(void *args) {
 
         while (data.connection->getNumberOfQueuedActions() == 0) {
             pthread_cond_wait(&data.connection->getExecuteCond(), &data.connection->getConnectionMediatorMut());
-            if (data.connection->isTerminatedConnection() || *data.terminate) {
+            if (data.connection->isTerminatedConnection() || *tempData->terminate) {
                 pthread_mutex_unlock(&data.connection->getConnectionMediatorMut());
                 delete data.connection;
                 cout << "Connection ended - deleting processing thread" << endl;

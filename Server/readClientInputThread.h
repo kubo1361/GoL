@@ -27,7 +27,6 @@ void *rcitFun(void *args) {
 
     rcitData data;
     data.connection = tempData->connection;
-    data.terminate = tempData->terminate;
 
     while(true) {
         bzero(buffer, BUFFER_LEN);
@@ -35,7 +34,7 @@ void *rcitFun(void *args) {
         n = read(data.connection->getSocket(), buffer, (BUFFER_LEN - 1));
 
 
-        if (n <= 0 || *data.terminate) {
+        if (n <= 0 || *tempData->terminate) {
             if(n == 0) {
                 cout << "Connection ended - deleting read thread" << endl;
             } else {

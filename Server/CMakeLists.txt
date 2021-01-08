@@ -7,8 +7,6 @@ add_executable(Server
         main.cpp
         Connection.cpp
         Connection.h
-        Clients.cpp
-        Clients.h
         connectionHandlerThread.h
         readClientInputThread.h
         processingThread.h
