@@ -68,12 +68,10 @@ int main(int argc, char *argv[]) {
             shutdown(serverSocket, SHUT_RDWR);
             close(serverSocket);
             endwin();
-            sleep(2);
+            sleep(5);
             return 0;
         }
     }
 }
-
-//TODO nainstaluj WSL a fixni memory leaky
 #undef PORT
 #undef HOST_COUNT

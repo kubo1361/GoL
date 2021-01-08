@@ -27,10 +27,12 @@ void *chtFun(void *args) {
     chtData *data = (chtData *) args;
     Connection *connection;
     int socket = 0;
+    vector<Connection*> list;
 
     while (true) {
         pthread_mutex_lock(data->chtMut);
         connection = new Connection(time(0));
+        list.push_back(connection);
         pthread_mutex_unlock(data->chtMut);
 
 
@@ -39,7 +41,12 @@ void *chtFun(void *args) {
                         &(connection->getClientAddressLength()));
 
         if(*data->terminate) {
+            for (int i = 0; i < list.size(); ++i) {
+                list[i]->shutdownSocket();
+            }
+
             delete data->storage;
+            delete connection;
             cout << "Deleting accept thread" << endl;
             cout << "Deleting Storage" << endl;
             return nullptr;

@@ -24,6 +24,7 @@ private:
     int id;
 
     int socket;
+    bool hasSocket;
     sockaddr_in clientAddress;
     socklen_t clientAddressLength;
 
@@ -64,6 +65,8 @@ public:
     Game * getGame();
     ServerStorage * getStorage();
     void connectStorage(ServerStorage * arg);
+
+    void shutdownSocket();
 };
 
 

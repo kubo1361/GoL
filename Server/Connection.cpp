@@ -18,14 +18,19 @@ Connection::Connection(int arg) {
 
     this->game = new Game(DEFAULT_DIM);
     this->storage = nullptr;
+
+    this->hasSocket = false;
 }
 
 Connection::~Connection() {
     delete actionBuffer;
 
+    if(this->hasSocket) {
+        shutdown(this->socket, SHUT_RD);
+    }
+
     pthread_mutex_destroy(&(this->connectionMediatorMut));
     pthread_cond_destroy(&(this->executeCond));
-    shutdown(this->socket, SHUT_RD);
     close(this->socket);
 
     delete game;
@@ -36,6 +41,7 @@ int Connection::getSocket() {
 }
 
 void Connection::setSocket(int arg) {
+    this->hasSocket = true;
     this->socket = arg;
 }
 
@@ -97,6 +103,11 @@ ServerStorage *Connection::getStorage() {
 
 void Connection::connectStorage(ServerStorage * arg) {
     this->storage = arg;
+}
+
+void Connection::shutdownSocket() {
+    this->hasSocket = false;
+    shutdown(this->socket, SHUT_RD);
 }
 
 #undef DEFAULT_DIM
