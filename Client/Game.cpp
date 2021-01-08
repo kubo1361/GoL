@@ -10,7 +10,7 @@ Game::Game(int dims) {
     this->cols = dims;
 
     grid = new vector<vector<bool>>(rows, vector<bool>(cols, 0));
-    //secondaryGrid =  new vector<vector<bool>>(rows, vector<bool>(cols, 0));
+
 }
 
 
@@ -20,13 +20,13 @@ Game::Game(int rows, int cols) {
     this->cols = cols;
     this->name = " ";
     grid = new vector<vector<bool>>(rows, vector<bool>(cols, 0));
-    //secondaryGrid =  new vector<vector<bool>>(rows, vector<bool>(cols, 0));
+
 }
 
 
 Game::~Game() {
     delete grid;
-    //delete secondaryGrid;
+
 }
 
 
@@ -51,15 +51,6 @@ void Game::printGrid() {
     cout << endl;
 }
 
-void Game::simulate(int number) {
-   /* while (true) {
-        printGrid();
-        calculateState();
-        synchronizeGrids();
-        sleep(1 / fps);
-        clearScreen();
-    }*/
-}
 void Game::fillPosition(int x, int y) {
     grid->at(x).at(y) = true;
 }
@@ -77,11 +68,10 @@ void Game::fillPositions(int rows, int cols, string argCells) {
         stringstream  splitCoordinates(line1);
         string line2;
         for (int i = 0; i < 2; ++i) {
-          //  cout << line2 << endl;
+
             getline(splitCoordinates,line2,'.');
             coords[i] = stoi(line2);
         }
-       // cout << "final: " << to_string(coords[0]) << " " << to_string(coords[1]) << endl;
         this->fillPosition(coords[0], coords[1]);
     }
 }

@@ -62,7 +62,7 @@ string Menu::start() {
         } else {
 
             string message = "randomPattern;" +rows + ";" + cols + ";" + count;
-            cout << message << endl;
+
             return message;
         }
 

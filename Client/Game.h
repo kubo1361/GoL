@@ -27,11 +27,9 @@ public:
     string& getName();
     void clearScreen();
     void printGrid();
-    void simulate(int number);
     void fillPosition(int x, int y);
-    void fillPositions(string argFileCells);
-    void fillPositions(int rows, int cols, string argCells);
 
+    void fillPositions(int rows, int cols, string argCells);
 
 
 
@@ -40,9 +38,9 @@ public:
     void reshape(int x, int y);
     void restart();
 
-    //string getState();
 
-    string forwardStep();
+
+
 };
 
 

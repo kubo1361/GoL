@@ -33,6 +33,9 @@ void * rThreadF(void* con) {
 
 
         action = connect->con->readAction();
+        if(action.compare("end") == 0){
+            return nullptr;
+        }
 
         while(connect->con->getValid()) {
 
@@ -67,7 +70,7 @@ void * rThreadF(void* con) {
 
             if(connect->con->getValid()){
             if (action_full[0].compare("loadPatternNames") ==0) { // action: loadPatternNames, return: name1;name2;name3;...
-                cout << action_full.at(0) << endl;
+
                 cout << "Vyber subor ktory chces nacitat :" << endl;
                 for(int i = 1; i < action_full.size(); i++)
                 {
@@ -79,7 +82,7 @@ void * rThreadF(void* con) {
                 int poradie;
                 cin >> poradie;
                 action = "loadPattern;" + action_full.at(poradie);
-                cout << action << endl;
+
                 connect->con->getGame()->getName() = action_full.at(poradie);
                 n = write(connect->con->getSocketServer(), action.c_str(), action.length());
 
@@ -130,6 +133,7 @@ void * rThreadF(void* con) {
                 connect->con->getGame()->clearScreen();
                 connect->con->getGame()->printGrid();
                 connect->con->getValid() = false;
+                connect->con->getReading() = true;
 
 
             } else if (action_full[0].compare("defineCells") ==
@@ -141,6 +145,7 @@ void * rThreadF(void* con) {
                 connect->con->getGame()->clearScreen();
                 connect->con->getGame()->printGrid();
                 connect->con->getValid() = false;
+                connect->con->getReading() = true;
 
 
             } else if (action_full[0].compare("forwardStep") ==

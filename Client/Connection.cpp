@@ -27,11 +27,12 @@ Connection::Connection(int id) {
 
 Connection::~Connection() {
 
-    if (this->valid) {
-        shutdown(this->socket, SHUT_RD);
-        close(this->socket);
-    }
 
+        shutdown(this->socket, SHUT_RDWR);
+        close(this->socket);
+
+    delete this->game;
+    delete this->menu;
     pthread_cond_destroy(&(this->condR));
     pthread_cond_destroy(&(this->condW));
     pthread_mutex_destroy(&(this->mut));
@@ -98,12 +99,12 @@ bool Connection::itHasAction() {
 void Connection::showMenu() {
     cout << "1: Nacitaj hru" << endl;
     cout << "2: Krok dopredu" << endl;
-    cout << "3: Krok dozadu" << endl;
-    cout << "4: Pauza" << endl;
-    cout << "5: Pokracuj" << endl;
-    cout << "6: Vymaz aktualnu hru zo serveru" << endl;
-    cout << "7: Uloz" << endl;
-    cout << "8: Nacitaj zo serveru" << endl;
+    //cout << "3: Krok dozadu" << endl;
+    cout << "3: Pauza" << endl;
+    cout << "4: Pokracuj" << endl;
+    cout << "5: Vymaz aktualnu hru zo serveru" << endl;
+    cout << "6: Uloz" << endl;
+    cout << "7: Nacitaj zo serveru" << endl;
     cout << "0: Koniec hry" << endl;
 }
 bool& Connection::getReading() {

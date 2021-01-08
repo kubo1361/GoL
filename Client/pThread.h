@@ -39,32 +39,41 @@ void * pThreadF(void* connect) {
             switch (stoi(action)) {
                 case 0:
                     cout << "Program konci " << endl;
+                    message = "end";
+                    pthread_mutex_lock(&con->con->getMut());
+
+                    con->con->writeAction(message);
+                    pthread_cond_signal(&con->con->getCondR());
+                    pthread_mutex_unlock(&con->con->getMut());
+
                     con->con->getActiveCon() = false;
+                    return nullptr;
                 case 1:
                     message = create;
+                    con->con->getReading() = false;
                     break;
                 case 2:
                     message = "forwardStep";
                     cmessage = message;
                     pause = false;
                     break;
-                case 3:
+                /*case 3:
                     message = "backwardStep";
                     cmessage = message;
                     pause = false;
-                    break;
-                case 4:
+                    break;*/
+                case 3:
                     pause = true;
                     message = cmessage;
 
                     break;
-                case 5:
+                case 4:
                     pause = false;
                     message = cmessage;
                     con->con->getValid() = !pause;
 
                     break;
-                case 6:
+                case 5:
                     pause = false;
                     con->con->getGame()->getName();
                     if(con->con->getGame()->getName().compare(" ") != 0 ) {
@@ -77,7 +86,7 @@ void * pThreadF(void* connect) {
                     }
 
                     break;
-                case 7:
+                case 6:
                     pause = false;
                     cout << "Nazov paternu " << endl;
                     cin >> meno;
@@ -85,7 +94,7 @@ void * pThreadF(void* connect) {
                     con->con->getGame()->getName() = meno;
                     break;
 
-                case 8:
+                case 7:
                     pause = false;
                     con->con->getReading() = false;
                     message = "loadPatternNames;";

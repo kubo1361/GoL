@@ -16,7 +16,7 @@
 int main (int argc, char* argv[]){
 
     Connection* con = new Connection(15);
-    struct hostent* serv = gethostbyname("frios2.fri.uniza.sk");
+    struct hostent* serv = /*gethostbyname("frios2.fri.uniza.sk")*/gethostbyname("localhost");
 
     if (serv == NULL) {
         delete con;
@@ -28,7 +28,7 @@ int main (int argc, char* argv[]){
     char buffer[BUFF];
 
     bzero((char*)&(con->getAddress()), sizeof(con->getAddress()));
-    con->getAddress().sin_family = AF_INET;
+    con->getAddress().sin_family = /*AF_INET;*/AF_INET;
 
     bcopy(
             (char*)serv->h_addr,
@@ -65,19 +65,12 @@ int main (int argc, char* argv[]){
     pthread_detach(rThread);
 
     while (con->getActiveCon()) {
-        /*
-        char n = getch();
-        if (n == 113) {
-            close(con->getSocketServer());
 
-            endwin();
-            sleep(1);
-            cout << "Shutting down client" << endl;
-            return 0;
-        }
-         */
     }
     close(con->getSocketServer());
+    sleep(2);
+    delete con;
+
     return 0;
 }
 
