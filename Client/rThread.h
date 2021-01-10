@@ -150,13 +150,19 @@ void * rThreadF(void* con) {
 
             } else if (action_full[0].compare("forwardStep") ==
                        0) { // action: forwardStep, return: size_x;_size_y;livingCells
+                if (action_full.size() <= 3) {
+                    cout << "Hra skoncila" << endl;
+                    cout << "Nacitaj hru zo servera alebo ukonci program" << endl;
+                    connect->con->getValid() = false;
+                    connect->con->getReading() = true;
+                } else {
                 connect->con->getGame()->fillPositions(
                         stoi(action_full[1]),
                         stoi(action_full[2]),
                         action_full[3]);
                 connect->con->getGame()->clearScreen();
                 connect->con->getGame()->printGrid();
-
+                }
 
             } else if (action_full[0].compare("backwardStep") ==
                        0) { // action: backwardStep, return: size_x;_size_y;livingCells
