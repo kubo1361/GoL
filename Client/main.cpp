@@ -16,7 +16,7 @@
 int main (int argc, char* argv[]){
 
     Connection* con = new Connection(15);
-    struct hostent* serv = /*gethostbyname("frios2.fri.uniza.sk")*/gethostbyname("localhost");
+    struct hostent* serv = gethostbyname("frios2.fri.uniza.sk")/*gethostbyname("localhost")*/;
 
     if (serv == NULL) {
         delete con;

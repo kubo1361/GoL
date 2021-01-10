@@ -106,7 +106,9 @@ string Menu::start() {
             }
             break;
         }
-        string message ="defineCells;"+ rows + ";" + cols + ";" + living;
+        string message ="defineCells;"+ x;
+        message += ";" + y;
+        message += ";" + living;
         return message;
     } else {
         return  "loadPatternNames";
